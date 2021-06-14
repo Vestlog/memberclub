@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to the Club</title>
+    <style>
+        h1, h2 {
+            text-align: center;
+        }
+
+        form {
+            margin: 1em;
+        }
+
+        .form-group {
+            margin: 1em;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 80%;
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        table * {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 0.5em;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the Club</h1>
+    <form action="/save" method="POST">
+        <div class="form-group">
+            <label>
+                <h3>New Member</h3>
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email">
+        </div>
+        <div class="form-group">
+            <button>Submit</button>
+            <button type="reset">Clear</button>
+        </div>
+    </form>
+    <h2>Members</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Registration Date</th>
+            </tr>
+        </thead>
+        {{range .}}
+        <tr>
+            <td>{{.ID}}</td>
+            <td>{{.Name}}</td>
+            <td>{{.Email}}</td>
+            <td>{{.Registration}}</td>
+        </tr>
+        {{end}}
+    </table>
+</body>
+
+</html>
