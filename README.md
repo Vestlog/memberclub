@@ -21,7 +21,7 @@ Flags:
 
 * `-p <port_number>`
 
-    to specify what port should be used.
+    to specify what port should be used. Default is 8080.
 
 * `-r`
 
